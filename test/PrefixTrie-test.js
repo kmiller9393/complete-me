@@ -1,5 +1,4 @@
 import { expect } from 'chai';
-import Node from '..lib/Node';
 import PrefixTrie from '../lib/PrefixTrie';
 
 describe('PREFIX TRIE', () => {
@@ -16,3 +15,4 @@ describe('PREFIX TRIE', () => {
   it('should set its default head to null', () => {
     expect(trie.head).to.eq(null);
   });
+});
