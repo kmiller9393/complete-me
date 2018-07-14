@@ -1,22 +1,19 @@
 import { expect } from 'chai';
 import Node from '../lib/Node';
+require('locus');
 
 describe('NODE', () => {
   let node;
 
   beforeEach(() => {
-    var node = new Node('letter');
+    node = new Node('letter');
   })
 
   it('should exist', () => {
     expect(node).to.exist;
   })
 
-  it('should default next to null', () => {
-    expect(node.next).to.equal(null);
+  it('should start as an empty object', () => {
+    expect(node.children).to.deep.eq({});
   })
-
-  it('should take data and assign it to data prop', () => {
-    expect(node.data).to.equal('hello');
-  })
-})
+});
