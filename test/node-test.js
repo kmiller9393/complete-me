@@ -5,7 +5,7 @@ describe('NODE', () => {
   let node;
 
   beforeEach(() => {
-    node = new Node('letter');
+    var node = new Node('letter');
   })
 
   it('should exist', () => {
@@ -17,6 +17,6 @@ describe('NODE', () => {
   })
 
   it('should take data and assign it to data prop', () => {
-    expect(node.data).to.equal('letter');
+    expect(node.data).to.equal('hello');
   })
 })
