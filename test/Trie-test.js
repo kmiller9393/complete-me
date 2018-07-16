@@ -37,7 +37,6 @@ describe('TRIE', () => {
       trie.insert('help');
       trie.insert('calm');
       trie.insert('cool');
-      console.log(JSON.stringify(trie, null, 4));
       expect(trie.wordCount).to.eq(4);
     });
   });
