@@ -28,6 +28,10 @@ describe('TRIE', () => {
   });
 
   describe('insert', () => {
+    it('should have the insert method', () => {
+      expect(trie).respondsTo('insert');
+    });
+
     it('should be able to insert a word and keep track of how many words are present', () => {
       trie.insert('hello');
       trie.insert('help');
@@ -38,13 +42,21 @@ describe('TRIE', () => {
     });
   });
 
+  describe('count', () => {
+    it('should have the count method', () => {
+      expect(trie).respondsTo('count');
+    });
+
+    it('should increase the prefix trie word count after each word is inserted', () => {
+      trie.insert('hello');
+      trie.insert('howdy');
+      expect(trie.wordCount).to.eq(2);
+    });
+  });  
+
   describe('suggest', () => {
     it('should have the suggest method', () => {
       expect(trie).respondsTo('suggest');
-    });
-
-    it.skip('should take in a prefix', () => {
-      // expect(trie.suggest(prefix)).to.deep.eq()
     });
 
     it('should return an empty array if there are no words containing that prefix', () => {
@@ -64,6 +76,10 @@ describe('TRIE', () => {
   });
 
   describe('populate', () => {
+    it('should have the populate method', () => {
+      expect(trie).respondsTo('populate');
+    });
+
     it('should populate the prefix trie with words from the dictionary', () => {
       trie.populate(dictionary);
       expect(trie.wordCount).to.deep.eq(dictionary.length);

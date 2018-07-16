@@ -16,4 +16,8 @@ describe('NODE', () => {
   it('should start as an empty object', () => {
     expect(node.children).to.deep.eq({});
   });
+
+  it('should have an endOfWord property set to false', () => {
+    expect(node.endOfWord).to.eq(false);
+  });
 });
