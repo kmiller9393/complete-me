@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import Trie from '../lib/Trie';
-import Node from '../lib/Node';
+import Node from '../lib/node';
 import fs from 'fs';
 require('locus');
 
