@@ -4,9 +4,7 @@ import Node from '../lib/Node';
 import fs from 'fs';
 require('locus');
 
-const text = "/usr/share/dict/words";
-const dictionary = fs.readFileSync(text).toString().trim().split('\n');
-
+const text = require('../largest1000cities.js');
 
 describe('TRIE', () => {
   let trie;
@@ -59,7 +57,7 @@ describe('TRIE', () => {
     });
 
     it('should return an empty array if there are no words containing that prefix', () => {
-      trie.populate(dictionary);
+      trie.populate(text);
       trie.suggest('he');
       expect(trie.suggest('hx')).to.deep.eq([]);
     });
@@ -80,7 +78,7 @@ describe('TRIE', () => {
     });
 
     it('should populate the prefix trie with words from the dictionary', () => {
-      trie.populate(dictionary);
+      trie.populate(text);
       expect(trie.wordCount).to.deep.eq(dictionary.length);
     });  
   });
